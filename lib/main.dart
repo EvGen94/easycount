@@ -4,6 +4,7 @@ import './widgets/raiting.dart';
 import './widgets/easycount.dart';
 import './widgets/statistics.dart';
 
+
 void main() {
   runApp(MaterialApp(
       // Title
@@ -50,7 +51,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
       // Set the TabBar view as the body of the Scaffold
       body: TabBarView(
         // Add tabs as widgets
-        children: <Widget>[FirstTab(), SecondTab(), ThirdTab()],
+        children: <Widget>[SecondTab(),FirstTab(), ThirdTab()],
         // set the controller
         controller: controller,
       ),

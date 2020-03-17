@@ -41,38 +41,38 @@ class _SecondTabState extends State<SecondTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body: Container(
-        child: Column(
-          // center the children
-         
-          children: <Widget>[
-              Text(
-                  '$_start',
-                  style: TextStyle(color: Colors.white, fontSize: 45),
-                ),
-                Spacer(flex: 2),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Text(
-                    '$_rand_1 + $_rand_2 = ',
-                    style: TextStyle(color: Colors.white, fontSize: 45),
-                  ),
-                ),
-              ],
+      body: Column(
+        // center the children
+
+        children: <Widget>[
+          Container(
+            alignment: Alignment.topRight,
+            child: CircleAvatar(
+              child: Text(
+                '$_start',
+                style: TextStyle(color: Colors.white, fontSize: 45),
+              ),
             ),
-            FlatButton(
-              child: Text('New button'),
-              color: Colors.redAccent,
-              onPressed: () {
-                _numberrand();
-                startTimer();
-              },
-            )
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 300.0,
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: Text(
+              '$_rand_1 + $_rand_2 = ',
+              style: TextStyle(color: Colors.white, fontSize: 45),
+            ),
+          ),
+          FlatButton(
+            child: Text('New button'),
+            color: Colors.redAccent,
+            onPressed: () {
+              _numberrand();
+              startTimer();
+            },
+          )
+        ],
       ),
     );
   }

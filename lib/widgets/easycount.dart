@@ -1,8 +1,11 @@
 import 'dart:math';
 import 'dart:async';
 import 'package:flutter/material.dart';
+// import '../main.dart';
+import './keyboard.dart';
 
 class SecondTab extends StatefulWidget {
+  final MyGridView myGridView = MyGridView();
   @override
   _SecondTabState createState() => _SecondTabState();
 }
@@ -37,8 +40,21 @@ class _SecondTabState extends State<SecondTab> {
       ),
     );
   }
+   int num_1;
+   int num_2;
+   
 
+ void getNumbers(int _num1,int _num2) {
+  
+
+  setState(() {
+    num_1=_num1;
+    num_2=_num2;
+  });
+ 
+ }
   Widget build(BuildContext context) {
+    final MyGridView myGridView = MyGridView();
     return Scaffold(
       backgroundColor: Colors.green,
       body: Column(
@@ -55,15 +71,15 @@ class _SecondTabState extends State<SecondTab> {
             ),
           ),
           SizedBox(
-            height: 300.0,
+            height: 200.0,
           ),
           Container(
             alignment: Alignment.center,
             child: Text(
-              '$_rand_1 + $_rand_2 = ',
+              '$_rand_1 + $_rand_2 = $num_1$num_2',
               style: TextStyle(color: Colors.white, fontSize: 45),
             ),
-          ),
+          ),Container(width: 200,height: 250, child:myGridView.build(),),
           FlatButton(
             child: Text('New button'),
             color: Colors.redAccent,

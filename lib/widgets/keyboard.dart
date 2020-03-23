@@ -5,17 +5,16 @@ import 'package:flutter/material.dart';
 
 
 class MyGridView {
-  //final Function startTimer;
-  // MyGridView(this.startTimer);
- final Function startTimer;
+  
+ final VoidCallback clickCallback;
 
- MyGridView(this.startTimer)
-  GestureDetector getStructuredGridCell(name,startTimer) {
+ MyGridView(this.clickCallback);
+  GestureDetector getStructuredGridCell(name) {
     // Wrap the child under GestureDetector to setup a on click action
     return GestureDetector(
       onTap : () {
         print("onTap called.");
-        () => startTimer;
+        clickCallback();
       },
       child: Card(
           elevation: 1.5,

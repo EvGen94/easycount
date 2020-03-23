@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import './keyboard.dart';
 
 class SecondTab extends StatefulWidget {
-  final MyGridView myGridView = MyGridView();
+  
   @override
   _SecondTabState createState() => _SecondTabState();
 }
@@ -54,7 +54,7 @@ class _SecondTabState extends State<SecondTab> {
  
  }
   Widget build(BuildContext context) {
-    final MyGridView myGridView = MyGridView();
+    final MyGridView myGridView = MyGridView(startTimer);
     return Scaffold(
       backgroundColor: Colors.green,
       body: Column(
